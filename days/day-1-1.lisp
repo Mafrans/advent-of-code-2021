@@ -8,9 +8,8 @@
     do (let 
         ((value (parse-integer string-value)))
         (progn 
-            (if (> last-value 0)
-                (if (> value last-value)
-                    (incf total-increases)))
+            (if (and (> last-value 0) (> value last-value))
+                (incf total-increases))
             (setq last-value value))))
 
 (format T "~a" total-increases)
