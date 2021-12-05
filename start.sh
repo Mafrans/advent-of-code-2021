@@ -1,0 +1,1 @@
+sbcl --noprint --non-interactive --load ./days/day-$1-$2.lisp
