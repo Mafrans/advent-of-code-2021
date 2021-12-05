@@ -4,9 +4,8 @@
 (defvar total-increases 0)
 (defvar last-value 0)
 
-(loop for string-value in input
-    do (let 
-        ((value (parse-integer string-value)))
+(loop for line in input
+    do (let ((value (parse-integer line)))
         (progn 
             (if (and (> last-value 0) (> value last-value))
                 (incf total-increases))
